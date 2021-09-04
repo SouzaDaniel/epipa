@@ -1,0 +1,52 @@
+@use "sass:math";
+
+$awe-gray-first:    #616568;
+$awe-blue-first:    #2f4dbc;
+$awe-red-first:     #FF3B3B;
+
+$theme-colors: (
+  'awe-gray-first':   $awe-gray-first,
+  'awe-blue-first':   $awe-blue-first,
+  'awe-red-first':    $awe-red-first,
+);
+
+$awe-position-values: (
+  24: 24px,
+);
+
+$font-weight-thin:          100;
+$font-weight-extra-light:   200;
+$font-weight-light:         300;
+$font-weight-regular:       400;
+$font-weight-medium:        500;
+$font-weight-semibold:      600;
+$font-weight-bold:          700;
+$font-weight-extrabold:     800;
+$font-weight-black:         900;
+
+$spacer: 1rem;
+$awe-spacers: (
+  'awe-12': $spacer * 0.75,
+  'awe-20': $spacer * 1.25,
+  'awe-80': $spacer * 5,
+);
+
+$font-sizes: (
+  12: 12px,
+  14: 14px,
+);
+$font-family-sans-serif: 'open sans', sans-serif;
+
+$form-label-color:          $awe-gray-first;
+$form-label-font-weight:    $font-weight-semibold;
+$form-label-margin-bottom:  0;
+
+$input-font-size:           14px;
+$input-padding-y:           $input-font-size;
+$input-padding-x:           $input-padding-y;
+$input-border-radius:       8px;
+
+$btn-font-size:             14px;
+$btn-font-weight:           $font-weight-semibold;
+$btn-padding-x:             $btn-font-size;
+$btn-padding-y:             math.div($btn-padding-x, 2);
