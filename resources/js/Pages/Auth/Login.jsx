@@ -32,7 +32,11 @@ const Login = () => {
                       onSubmit={handleSubmit}
                       className="d-flex flex-column align-items-start"
                     >
-                      <img src={logo} alt="" className="mb-5 w-100 img-fluid" />
+                      <img
+                        src="/public/images/logo.svg"
+                        alt=""
+                        className="mb-5 w-100 img-fluid"
+                      />
                       <p className="fz-14 text-awe-gray-first mb-4">
                         Tenha acesso a um mundo de novidades e promoções para
                         você que é cliente do e-pipa.
