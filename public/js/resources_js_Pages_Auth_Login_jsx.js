@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _excluded = ["label", "id", "error", "isSuccess"];
+var _excluded = ["label", "id", "error", "success"];
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -35,7 +35,7 @@ function Input(_ref) {
   var label = _ref.label,
       id = _ref.id,
       error = _ref.error,
-      isSuccess = _ref.isSuccess,
+      success = _ref.success,
       attr = _objectWithoutProperties(_ref, _excluded);
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
@@ -47,9 +47,9 @@ function Input(_ref) {
     })), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
       className: "fz-12 text-awe-red-first",
       children: error
-    }), isSuccess && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-      className: "fz-12 text-awe-red-first",
-      children: "Sucesso"
+    }), success && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+      className: "fz-12 text-awe-green-first",
+      children: success
     })]
   });
 }
@@ -57,12 +57,12 @@ Input.propTypes = {
   label: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
   id: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
   error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-  isSuccess: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool)
+  success: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
 };
 Input.defaultProps = {
   label: '',
   error: '',
-  isSuccess: false
+  success: ''
 };
 
 /***/ }),
@@ -92,6 +92,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var Login = function Login() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     email: '',
@@ -102,100 +103,98 @@ var Login = function Login() {
       setData = _useForm.setData,
       post = _useForm.post,
       processing = _useForm.processing,
-      errors = _useForm.errors,
-      wasSuccessful = _useForm.wasSuccessful,
-      recentlySuccessful = _useForm.recentlySuccessful;
+      errors = _useForm.errors;
 
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
     post(route('login'));
-    console.log(recentlySuccessful);
   };
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    console.log(wasSuccessful);
-  }, [wasSuccessful]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("main", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("section", {
-      className: "min-vh-100 d-flex align-items-center",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "container",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "Login"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("main", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("section", {
+        className: "min-vh-100 d-flex align-items-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: "row",
+          className: "container py-4",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            className: "col-12",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "shadow p-5 px-lg-0 row m-0",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "col-xl-4 col-lg-5 mx-lg-auto",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
-                  onSubmit: handleSubmit,
-                  className: "d-flex flex-column align-items-start",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                    src: _image_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
-                    alt: "",
-                    className: "mb-5 w-100 img-fluid"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-                    className: "fz-14 text-awe-gray-first mb-4",
-                    children: "Tenha acesso a um mundo de novidades e promo\xE7\xF5es para voc\xEA que \xE9 cliente do e-pipa."
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                    className: "d-flex flex-column gapy-awe-12 mb-awe-12 w-100",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                      id: "email",
-                      placeholder: "Digite seu e-mail",
-                      label: "Login",
-                      value: data.email,
-                      onChange: function onChange(_ref) {
-                        var value = _ref.target.value;
-                        return setData('email', value);
-                      },
-                      error: errors.email
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                      id: "password",
-                      placeholder: "******",
-                      type: "password",
-                      label: "Senha",
-                      value: data.password,
-                      onChange: function onChange(_ref2) {
-                        var value = _ref2.target.value;
-                        return setData('password', value);
-                      },
-                      error: errors.password
+            className: "row",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+              className: "col-12",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                className: "shadow p-5 px-lg-0 row m-0",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  className: "col-xl-4 col-lg-5 mx-lg-auto",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+                    onSubmit: handleSubmit,
+                    className: "d-flex flex-column align-items-start",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+                      src: _image_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+                      alt: "",
+                      className: "mb-5 w-100 img-fluid"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+                      className: "fz-14 text-awe-gray-first mb-4",
+                      children: "Tenha acesso a um mundo de novidades e promo\xE7\xF5es para voc\xEA que \xE9 cliente do e-pipa."
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+                      className: "d-flex flex-column gapy-awe-12 mb-awe-12 w-100",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                        id: "email",
+                        placeholder: "Digite seu e-mail",
+                        label: "E-mail",
+                        value: data.email,
+                        onChange: function onChange(_ref) {
+                          var value = _ref.target.value;
+                          return setData('email', value);
+                        },
+                        error: errors.email
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+                        id: "password",
+                        placeholder: "******",
+                        type: "password",
+                        label: "Senha",
+                        value: data.password,
+                        onChange: function onChange(_ref2) {
+                          var value = _ref2.target.value;
+                          return setData('password', value);
+                        },
+                        error: errors.password
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+                      href: route('password.request'),
+                      className: "ms-auto fz-14 link-awe-blue-first text-decoration-none",
+                      children: "Esqueceu sua senha?"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+                      type: "submit",
+                      className: "btn btn-awe-blue-first w-100 mt-awe-20 mb-3",
+                      disabled: processing,
+                      children: "FAZER LOGIN"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+                      className: "fz-14 text-awe-gray-first",
+                      children: ["Ainda n\xE3o est\xE1 cadastrado?", ' ', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+                        href: route('register'),
+                        className: "ms-auto link-awe-blue-first text-decoration-none fw-bold",
+                        children: "Crie uma conta"
+                      })]
                     })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                    href: route('password.request'),
-                    className: "ms-auto fz-14 link-awe-blue-first text-decoration-none",
-                    children: "Esqueceu sua senha?"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-                    type: "submit",
-                    className: "btn btn-awe-blue-first w-100 mt-awe-20 mb-3",
-                    disabled: processing,
-                    children: "FAZER LOGIN"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
-                    className: "fz-14 text-awe-gray-first",
-                    children: ["Ainda n\xE3o est\xE1 cadastrado?", ' ', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-                      href: "#das",
-                      className: "ms-auto link-awe-blue-first text-decoration-none fw-bold",
-                      children: "Crie uma conta"
-                    })]
-                  })]
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                className: "col-5 d-lg-block d-none mx-auto",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: "h-100 d-flex align-items-center",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-                    src: _image_user_secure_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
-                    alt: "",
-                    className: "img-fluid"
                   })
-                })
-              })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                  className: "col-5 d-lg-block d-none mx-auto",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+                    className: "h-100 d-flex align-items-center",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+                      src: _image_user_secure_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+                      alt: "",
+                      className: "img-fluid"
+                    })
+                  })
+                })]
+              })
             })
           })
         })
       })
-    })
+    })]
   });
 };
 

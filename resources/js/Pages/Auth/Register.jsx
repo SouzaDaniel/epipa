@@ -1,100 +1,64 @@
 import React from 'react';
-import { useForm } from '@inertiajs/inertia-react';
+import { InertiaLink, Head } from '@inertiajs/inertia-react';
 
-const Register = ({ jetstream }) => {
-  const { data, setData, post, processing, errors, reset } = useForm({
-    name: '',
-    email: '',
-    password: '',
-    password_confirmation: '',
-    terms: false,
-  });
+import logo from '../../../image/logo.svg';
+import register from '../../../image/register.svg';
 
-  const handleChange = (e) => {
-    const target = e.currentTarget;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    setData(target.name, value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    post(route('register'), {
-      onFinish: () => reset('password', 'password_confirmation'),
-    });
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Name:</label>
-        <input
-          type="text"
-          value={data.name}
-          name="name"
-          onChange={handleChange}
-        />
-        {errors.name && <div>{errors.name}</div>}
-      </div>
-      <div>
-        <label>E-mail:</label>
-        <input
-          type="text"
-          value={data.email}
-          name="email"
-          onChange={handleChange}
-        />
-        {errors.email && <div>{errors.email}</div>}
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          type="password"
-          value={data.password}
-          name="password"
-          onChange={handleChange}
-        />
-        {errors.password && <div>{errors.password}</div>}
-      </div>
-
-      <div>
-        <label>Conform password</label>
-        <input
-          type="password"
-          value={data.password_confirmation}
-          name="password_confirmation"
-          onChange={handleChange}
-        />
-        {errors.password_confirmation && (
-          <div>{errors.password_confirmation}</div>
-        )}
-      </div>
-
-      {jetstream.hasTermsAndPrivacyPolicyFeature && (
-        <div>
-          <input
-            type="checkbox"
-            checked={data.terms}
-            name="terms"
-            onChange={handleChange}
-          />
-          I agree to the{' '}
-          <a target="_blank" href={route('terms.show')}>
-            Terms of Service
-          </a>{' '}
-          and{' '}
-          <a target="_blank" href={route('policy.show')}>
-            Privacy Policy
-          </a>
+const Register = () => (
+  <>
+    <Head title="Registrar" />
+    <main>
+      <div className="min-vh-100 d-flex align-items-center">
+        <div className="container py-4">
+          <div className="row">
+            <div className="col-12">
+              <div className="shadow p-5 px-lg-0 row m-0">
+                <div className="col-xl-5 col-lg-6 mx-lg-auto">
+                  <form className="d-flex flex-column align-items-start">
+                    <img
+                      src={logo}
+                      alt=""
+                      className="mb-awe-32 w-100 img-fluid"
+                    />
+                    <h1 className="fz-16 fw-semibold text-awe-black-first mb-4">
+                      Escolha como você quer fazer parte da E-pipa VIP
+                    </h1>
+                    <div className="d-flex flex-column gapy-awe-20 w-100">
+                      <InertiaLink
+                        className="text-awe-gray-first bg-awe-light-first bg-awe-light-second-hover transition border-0 py-3 px-awe-32 rounded shadow-sm text-start text-decoration-none"
+                        href={route('register.partner')}
+                      >
+                        Gostaria de ser{' '}
+                        <span className="fw-bold text-awe-blue-first">
+                          parceiro
+                        </span>{' '}
+                        e oferecer descontos
+                      </InertiaLink>
+                      <InertiaLink
+                        className="text-awe-gray-first bg-awe-light-first bg-awe-light-second-hover transition border-0 py-3 px-awe-32 rounded shadow-sm text-start text-decoration-none"
+                        href={route('register.user')}
+                      >
+                        Sou{' '}
+                        <span className="fw-bold text-awe-blue-first">
+                          hóspede
+                        </span>{' '}
+                        e quero ter descontos
+                      </InertiaLink>
+                    </div>
+                  </form>
+                </div>
+                <div className="col-5 d-lg-block d-none mx-auto">
+                  <div className="h-100 d-flex align-items-center">
+                    <img src={register} alt="" className="img-fluid" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      )}
-
-      <div>
-        <button type="submit" disabled={processing}>
-          Register
-        </button>
       </div>
-    </form>
-  );
-};
+    </main>
+  </>
+);
 
 export default Register;

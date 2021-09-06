@@ -5942,6 +5942,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         App = _ref.App,
         props = _ref.props;
     (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(App, _objectSpread({}, props)), el);
+  },
+  title: function title(_title) {
+    return "".concat(_title, " - Epipa");
   }
 });
 
@@ -5962,7 +5965,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-_inertiajs_progress__WEBPACK_IMPORTED_MODULE_1__.InertiaProgress.init();
+_inertiajs_progress__WEBPACK_IMPORTED_MODULE_1__.InertiaProgress.init({
+  color: '#E3AE23'
+});
 
 /***/ }),
 
@@ -63208,6 +63213,14 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Auth/ConfirmEmail": [
+		"./resources/js/Pages/Auth/ConfirmEmail.jsx",
+		"resources_js_Pages_Auth_ConfirmEmail_jsx"
+	],
+	"./Auth/ConfirmEmail.jsx": [
+		"./resources/js/Pages/Auth/ConfirmEmail.jsx",
+		"resources_js_Pages_Auth_ConfirmEmail_jsx"
+	],
 	"./Auth/ForgotPassword": [
 		"./resources/js/Pages/Auth/ForgotPassword.jsx",
 		"resources_js_Pages_Auth_ForgotPassword_jsx"
@@ -63231,6 +63244,30 @@ var map = {
 	"./Auth/Register.jsx": [
 		"./resources/js/Pages/Auth/Register.jsx",
 		"resources_js_Pages_Auth_Register_jsx"
+	],
+	"./Auth/RegisterPartner": [
+		"./resources/js/Pages/Auth/RegisterPartner.jsx",
+		"resources_js_Pages_Auth_RegisterPartner_jsx"
+	],
+	"./Auth/RegisterPartner.jsx": [
+		"./resources/js/Pages/Auth/RegisterPartner.jsx",
+		"resources_js_Pages_Auth_RegisterPartner_jsx"
+	],
+	"./Auth/RegisterUser": [
+		"./resources/js/Pages/Auth/RegisterUser.jsx",
+		"resources_js_Pages_Auth_RegisterUser_jsx"
+	],
+	"./Auth/RegisterUser.jsx": [
+		"./resources/js/Pages/Auth/RegisterUser.jsx",
+		"resources_js_Pages_Auth_RegisterUser_jsx"
+	],
+	"./Auth/ResetPassword": [
+		"./resources/js/Pages/Auth/ResetPassword.jsx",
+		"resources_js_Pages_Auth_ResetPassword_jsx"
+	],
+	"./Auth/ResetPassword.jsx": [
+		"./resources/js/Pages/Auth/ResetPassword.jsx",
+		"resources_js_Pages_Auth_ResetPassword_jsx"
 	],
 	"./Dashboard": [
 		"./resources/js/Pages/Dashboard.jsx",
@@ -63386,7 +63423,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Auth_ForgotPassword_jsx":1,"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Register_jsx":1,"resources_js_Pages_Dashboard_jsx":1,"resources_js_Pages_Welcome_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_ConfirmEmail_jsx":1,"resources_js_Pages_Auth_ForgotPassword_jsx":1,"resources_js_Pages_Auth_Login_jsx":1,"resources_js_Pages_Auth_Register_jsx":1,"resources_js_Pages_Auth_RegisterPartner_jsx":1,"resources_js_Pages_Auth_RegisterUser_jsx":1,"resources_js_Pages_Auth_ResetPassword_jsx":1,"resources_js_Pages_Dashboard_jsx":1,"resources_js_Pages_Welcome_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

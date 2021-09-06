@@ -9,4 +9,5 @@ createInertiaApp({
   setup({ el, App, props }) {
     render(<App {...props} />, el);
   },
+  title: (title) => `${title} - Epipa`,
 });

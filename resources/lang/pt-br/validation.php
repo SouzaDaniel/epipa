@@ -137,11 +137,36 @@ return [
 
   'custom' => [
     'password' => [
-      'required' => 'A senha é obrigatória'
+      'required' => 'A senha é obrigatória, preencha e tente novamente.',
+      'confirmed' => 'As senhas precisam ser iguais.'
     ],
     'email' => [
-      'required' => 'O email é obrigatório'
-    ]
+      'required' => 'O email é obrigatório, preencha e tente novamente.',
+      'unique' => 'Já há um usuário registrado com esse email.',
+    ],
+    'phone_number' => [
+      'required' => 'O preenchimento do telefone é obrigatório, preencha e tente novamente.',
+    ],
+    'user_id' => [
+      'required' => 'O preenchimento do campo de usuário é obrigatório, preencha e tente novamente.',
+      'numeric' => 'Selecione um usuário.',
+      'exists' => 'Selecione um usuário válido',
+    ],
+    'name' => [
+      'required' => 'O nome é obrigatório, preencha e tente novamente.',
+    ],
+    'responsible_name' => [
+      'required' => 'O nome do responsável é obrigatório, preencha e tente novamente.',
+    ],
+    'service_type' => [
+      'required' => 'O nome do serviço é obrigatório, preencha e tente novamente.',
+    ],
+    'phone_number' => [
+      'required' => 'O telefone é obrigatório, preencha e tente novamente.',
+    ],
+    'accepted_terms' => [
+      'accepted' => 'É necessário aceitar os termos de uso, aceite e tente novamente.',
+    ],
   ],
 
   /*

@@ -1,4 +1,88 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Auth_ForgotPassword_jsx"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_Pages_Auth_RegisterPartner_jsx"],{
+
+/***/ "./resources/js/Components/DataList.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/Components/DataList.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ DataList)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _excluded = ["label", "id", "error", "data", "success", "uid"];
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+/* eslint-disable react/no-array-index-key */
+
+
+
+
+function DataList(_ref) {
+  var label = _ref.label,
+      id = _ref.id,
+      error = _ref.error,
+      data = _ref.data,
+      success = _ref.success,
+      uid = _ref.uid,
+      attr = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+    htmlFor: id,
+    className: "form-label",
+    children: [label, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", _objectSpread(_objectSpread({}, attr), {}, {
+      className: "form-control mt-2",
+      id: id,
+      list: "datalist.".concat(id)
+    })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("datalist", {
+      id: "datalist.".concat(id),
+      children: data.map(function (item) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+          value: item[uid],
+          children: item.name
+        }, item[uid]);
+      })
+    }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+      className: "fz-12 text-awe-red-first",
+      children: error
+    }), success && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+      className: "fz-12 text-awe-green-first",
+      children: success
+    })]
+  });
+}
+DataList.propTypes = {
+  label: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
+  id: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  error: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
+  success: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
+  data: prop_types__WEBPACK_IMPORTED_MODULE_1___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({
+    id: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().number),
+    name: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
+  })).isRequired,
+  uid: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired)
+};
+DataList.defaultProps = {
+  label: '',
+  error: '',
+  success: ''
+};
+
+/***/ }),
 
 /***/ "./resources/js/Components/Input.jsx":
 /*!*******************************************!*\
@@ -67,24 +151,26 @@ Input.defaultProps = {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Auth/ForgotPassword.jsx":
-/*!****************************************************!*\
-  !*** ./resources/js/Pages/Auth/ForgotPassword.jsx ***!
-  \****************************************************/
+/***/ "./resources/js/Pages/Auth/RegisterPartner.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/Pages/Auth/RegisterPartner.jsx ***!
+  \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ForgotPassword)
+/* harmony export */   "default": () => (/* binding */ RegisterPartner)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _image_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../image/logo.svg */ "./resources/image/logo.svg");
-/* harmony import */ var _image_user_forgot_password_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../image/user-forgot-password.svg */ "./resources/image/user-forgot-password.svg");
-/* harmony import */ var _image_email_send_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../image/email-send.svg */ "./resources/image/email-send.svg");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _image_logo_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../image/logo.svg */ "./resources/image/logo.svg");
+/* harmony import */ var _image_register_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../image/register.svg */ "./resources/image/register.svg");
 /* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Components/Input */ "./resources/js/Components/Input.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_DataList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Components/DataList */ "./resources/js/Components/DataList.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -94,50 +180,56 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ForgotPassword() {
+
+function RegisterPartner(_ref) {
+  var _users$find;
+
+  var users = _ref.users;
+
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
-    email: ''
+    name: '',
+    service_type: '',
+    responsible_name: '',
+    phone_number: '',
+    user_id: '',
+    accepted_terms: false
   }),
-      data = _useForm.data,
-      setData = _useForm.setData,
-      post = _useForm.post,
-      processing = _useForm.processing,
-      errors = _useForm.errors;
+      partnerData = _useForm.data,
+      partnerSetData = _useForm.setData,
+      partnerPost = _useForm.post,
+      partnerProcessing = _useForm.processing,
+      partnerErrors = _useForm.errors;
 
-  var handleSubmit = function handleSubmit(e) {
+  var partnerHandleSubmit = function partnerHandleSubmit(e) {
     e.preventDefault();
-    post(route('password.email'));
+    partnerPost(route('register.partner'));
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
-      title: "Recuperar senha"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("main", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("section", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "Registrar"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("main", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("section", {
         className: "min-vh-100 d-flex align-items-center",
-        children: errors.success ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        children: partnerErrors.success ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "container-fluid py-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "row",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
               className: "col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-7 mx-auto",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "d-flex flex-column text-center",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                  src: _image_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                  src: _image_logo_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
                   alt: "",
-                  className: "img-fluid w-100"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                  src: _image_email_send_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
-                  alt: "",
-                  className: "mx-auto img-fluid mt-awe-80 mb-5"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
+                  className: "img-fluid w-100 mb-5"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
                   className: "text-awe-black-first fw-semibold fz-20 mb-awe-20",
-                  children: "Estamos quase l\xE1."
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+                  children: "Feito!"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
                   className: "fz-14 text-awe-gray-first mb-5",
-                  children: "Enviamos um e-mail com um link para cria\xE7\xE3o de nova senha. Acesse sua caixa postal e realize os passos indicados."
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+                  children: "O parceiro foi criado com sucesso, na pr\xF3ximo login ao sistema, voc\xEA ir\xE1 ter acesso aos dados!"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
                   href: route('login'),
                   className: "fz-14 link-awe-blue-first text-decoration-none fw-bold",
                   children: "Voltar ao login"
@@ -145,59 +237,129 @@ function ForgotPassword() {
               })
             })
           })
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "container py-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
             className: "row",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
               className: "col-12",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                 className: "shadow p-5 px-lg-0 row m-0",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   className: "col-xl-4 col-lg-5 mx-lg-auto",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
-                    onSubmit: handleSubmit,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+                    onSubmit: partnerHandleSubmit,
                     className: "d-flex flex-column align-items-start",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                      src: _image_logo_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                      src: _image_logo_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
                       alt: "",
                       className: "mb-4 w-100 img-fluid"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
                       className: "fz-24 mb-3",
-                      children: "Recupera\xE7\xE3o de senha"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+                      children: "Cadastro de parceiro"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("p", {
                       className: "fz-14 text-awe-gray-first mb-4",
-                      children: "Digite o seu e-mail que est\xE1 cadatrado no e-pipa vip e iremos enviar um link para criar sua nova senha."
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-                      className: "d-flex flex-column mb-awe-12 w-100",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
-                        id: "email",
-                        placeholder: "Digite seu e-mail",
-                        label: "E-mail",
-                        value: data.email,
-                        onChange: function onChange(_ref) {
-                          var value = _ref.target.value;
-                          return setData('email', value);
+                      children: ["Preencha seus dados abaixo para se tornar um parceiro do ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+                        children: "e-pipa vip"
+                      }), "."]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                      className: "d-flex flex-column gapy-awe-12 mb-awe-12 w-100",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                        id: "partnerName",
+                        placeholder: "Digite o nome da sua empresa",
+                        label: "Empresa",
+                        value: partnerData.name,
+                        onChange: function onChange(_ref2) {
+                          var value = _ref2.target.value;
+                          return partnerSetData('name', value);
                         },
-                        error: !processing ? errors.email : ''
-                      })
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+                        error: !partnerProcessing ? partnerErrors.name : ''
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                        id: "service_type",
+                        placeholder: "Alimenta\xE7\xE3o, entretenimento, passeios",
+                        label: "Tipo de Servi\xE7o",
+                        value: partnerData.service_type,
+                        onChange: function onChange(_ref3) {
+                          var value = _ref3.target.value;
+                          return partnerSetData('service_type', value);
+                        },
+                        error: !partnerProcessing ? partnerErrors.service_type : ''
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                        id: "responsible_name",
+                        placeholder: "Digite o nome da pessoa ser\xE1 o respons\xE1vel",
+                        label: "Nome do respons\xE1vel",
+                        value: partnerData.responsible_name,
+                        onChange: function onChange(_ref4) {
+                          var value = _ref4.target.value;
+                          return partnerSetData('responsible_name', value);
+                        },
+                        error: !partnerProcessing ? partnerErrors.responsible_name : ''
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_DataList__WEBPACK_IMPORTED_MODULE_6__["default"], {
+                        id: "user_id",
+                        placeholder: "Digite o nome da pessoa ser\xE1 o respons\xE1vel",
+                        label: "Nome do usu\xE1rio",
+                        uid: "id",
+                        value: partnerData.user_id ? (_users$find = users.find(function (user) {
+                          return user.id === Number(partnerData.user_id);
+                        })) === null || _users$find === void 0 ? void 0 : _users$find.name : '',
+                        data: users,
+                        onChange: function onChange(_ref5) {
+                          var value = _ref5.target.value;
+                          return partnerSetData('user_id', value);
+                        },
+                        error: !partnerProcessing ? partnerErrors.user_id : ''
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                        id: "partnerPhoneNumber",
+                        placeholder: "Telefone de contato",
+                        label: "Telefone",
+                        value: partnerData.phone_number,
+                        onChange: function onChange(_ref6) {
+                          var value = _ref6.target.value;
+                          return partnerSetData('phone_number', value);
+                        },
+                        error: !partnerProcessing ? partnerErrors.phone_number : ''
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                        className: "d-flex flex-column",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                          className: "form-check",
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
+                            className: "form-check-label fz-14 text-awe-gray-first",
+                            htmlFor: "accepted_terms",
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
+                              className: "form-check-input",
+                              type: "checkbox",
+                              value: partnerData.accepted_terms,
+                              onChange: function onChange() {
+                                return partnerSetData('accepted_terms', !partnerData.accepted_terms);
+                              },
+                              id: "accepted_terms"
+                            }), "Aceitar termos de uso"]
+                          })
+                        }), !partnerProcessing && partnerErrors.accepted_terms && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+                          className: "fz-12 text-awe-red-first fw-semibold",
+                          children: partnerErrors.accepted_terms
+                        })]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                       type: "submit",
                       className: "btn btn-awe-blue-first w-100 mt-awe-20 mb-3",
-                      disabled: processing,
-                      children: "RECUPERAR SENHA"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
-                      href: route('login'),
-                      className: "fz-14 link-awe-blue-first text-decoration-none fw-bold",
-                      children: "Voltar ao login"
+                      disabled: partnerProcessing,
+                      children: "REALIZAR CADASTRO"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("span", {
+                      className: "fz-14",
+                      children: ["J\xE1 \xE9 cadastrado?", ' ', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+                        href: route('login'),
+                        className: "link-awe-blue-first text-decoration-none fw-bold",
+                        children: "Voltar ao login"
+                      })]
                     })]
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                   className: "col-5 d-lg-block d-none mx-auto",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
                     className: "h-100 d-flex align-items-center",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                      src: _image_user_forgot_password_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                      src: _image_register_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
                       alt: "",
                       className: "img-fluid"
                     })
@@ -211,21 +373,12 @@ function ForgotPassword() {
     })]
   });
 }
-
-/***/ }),
-
-/***/ "./resources/image/email-send.svg":
-/*!****************************************!*\
-  !*** ./resources/image/email-send.svg ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/email-send.svg?f1a5be2496b2f7bd161c54f1f789d12b");
+RegisterPartner.propTypes = {
+  users: prop_types__WEBPACK_IMPORTED_MODULE_2___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_2___default().shape({
+    id: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().number),
+    name: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().string)
+  })).isRequired
+};
 
 /***/ }),
 
@@ -244,10 +397,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/image/user-forgot-password.svg":
-/*!**************************************************!*\
-  !*** ./resources/image/user-forgot-password.svg ***!
-  \**************************************************/
+/***/ "./resources/image/register.svg":
+/*!**************************************!*\
+  !*** ./resources/image/register.svg ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -255,7 +408,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/user-forgot-password.svg?e72412786bb6ad24cfd6c09374d92d6f");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/register.svg?e75e07841ed7a07b78b97194f3a402be");
 
 /***/ }),
 
@@ -1231,4 +1384,4 @@ if (false) {} else {
 /***/ })
 
 }]);
-//# sourceMappingURL=resources_js_Pages_Auth_ForgotPassword_jsx.js.map
+//# sourceMappingURL=resources_js_Pages_Auth_RegisterPartner_jsx.js.map

@@ -13,6 +13,7 @@ use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
+use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\RequestPasswordResetLinkViewResponse;
 use Laravel\Fortify\Fortify;
 
@@ -53,14 +54,25 @@ class FortifyServiceProvider extends ServiceProvider
     Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
     Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
+    Fortify::verifyEmailView(function () {
+      return Inertia::render('Auth/ConfirmEmail');
+    });
     Fortify::requestPasswordResetLinkView(function () {
       return Inertia::render('Auth/ForgotPassword');
+    });
+    Fortify::registerView(function () {
+      return Inertia::render('Auth/Register');
+    });
+    Fortify::resetPasswordView(function () {
+      return Inertia::render('Auth/ResetPassword');
     });
 
     RateLimiter::for('login', function (Request $request) {
       return Limit::perMinute(600)->by($request->email . $request->ip());
     });
-
+    RateLimiter::for('verification', function (Request $request) {
+      return Limit::perMinute(600)->by($request->email . $request->ip());
+    });
     RateLimiter::for('two-factor', function (Request $request) {
       return Limit::perMinute(5)->by($request->session()->get('login.id'));
     });

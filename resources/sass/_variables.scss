@@ -2,15 +2,24 @@
 
 $awe-gray-first:    #616568;
 $awe-blue-first:    #2f4dbc;
-$awe-red-first:     #FF3B3B;
+$awe-red-first:     #ff3b3b;
+$awe-green-first:   #06c270;
+$awe-black-first:   #000000;
+$awe-light-first:   #fafafa;
+$awe-light-second:  #cacaca;
 
 $theme-colors: (
   'awe-gray-first':   $awe-gray-first,
   'awe-blue-first':   $awe-blue-first,
   'awe-red-first':    $awe-red-first,
+  'awe-green-first':  $awe-green-first,
+  'awe-black-first':  $awe-black-first,
+  'awe-light-first':  $awe-light-first,
+  'awe-light-second': $awe-light-second,
 );
 
 $awe-position-values: (
+  20: 20px,
   24: 24px,
 );
 
@@ -28,12 +37,16 @@ $spacer: 1rem;
 $awe-spacers: (
   'awe-12': $spacer * 0.75,
   'awe-20': $spacer * 1.25,
+  'awe-32': $spacer * 2,
   'awe-80': $spacer * 5,
 );
 
 $font-sizes: (
   12: 12px,
   14: 14px,
+  16: 16px,
+  20: 20px,
+  24: 24px,
 );
 $font-family-sans-serif: 'open sans', sans-serif;
 

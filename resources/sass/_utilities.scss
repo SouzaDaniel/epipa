@@ -40,4 +40,19 @@ $utilities: (
     responsive: true,
     values: $spacers,
   ),
+  'background-color': (
+    property: background-color,
+    class: bg,
+    local-vars: (
+      'bg-opacity': 1,
+    ),
+    values:
+      map-merge(
+        $utilities-bg-colors,
+        (
+          'transparent': transparent,
+        )
+      ),
+    state: hover,
+  ),
 );
