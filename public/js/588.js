@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[588],{1588:(e,t,n)=>{n.r(t),n.d(t,{default:()=>o});n(7294);var u=n(9680),r=n(5893);const o=function(e){var t=e.user;return(0,r.jsxs)("div",{children:["Welcome ",t.name,",",(0,r.jsx)("button",{onClick:function(e){e.preventDefault(),u.Inertia.post(route("logout"))},children:"Log Out"})]})}}}]);
-//# sourceMappingURL=588.js.map

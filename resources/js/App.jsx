@@ -5,7 +5,7 @@ import { createInertiaApp } from '@inertiajs/inertia-react';
 import 'bootstrap';
 
 createInertiaApp({
-  resolve: (name) => import(`./Pages/${name}`),
+  resolve: (name) => require(`./Pages/${name}`),
   setup({ el, App, props }) {
     render(<App {...props} />, el);
   },
