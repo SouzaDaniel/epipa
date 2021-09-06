@@ -16,7 +16,7 @@ class CreatePartnersTable extends Migration
     Schema::create('partners', function (Blueprint $table) {
       $table->increments('id');
       $table->string('name', 64);
-      $table->integer('user_id')->nullable();
+      $table->integer('user_id')->unsigned()->nullable();
       $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('SET NULL');
       $table->boolean('active')->default(true);
       $table->string('responsible_name', 64);

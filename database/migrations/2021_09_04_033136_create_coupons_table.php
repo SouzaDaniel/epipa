@@ -14,8 +14,8 @@ class CreateCouponsTable extends Migration
   public function up()
   {
     Schema::create('coupons', function (Blueprint $table) {
-      $table->id();
-      $table->integer('partner_id')->nullable();
+      $table->increments('id');
+      $table->integer('partner_id')->unsigned()->nullable();
       $table->foreign('partner_id')->references('id')->on('partners')->onDelete('CASCADE')->onUpdate('CASCADE');
       $table->date('expired_at');
       $table->timestamps();

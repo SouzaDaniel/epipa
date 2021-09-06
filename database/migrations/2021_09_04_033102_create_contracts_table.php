@@ -14,9 +14,9 @@ class CreateContractsTable extends Migration
   public function up()
   {
     Schema::create('contracts', function (Blueprint $table) {
-      $table->id();
+      $table->increments('id');
       $table->date('partnership_at');
-      $table->integer('partner_id')->nullable();
+      $table->integer('partner_id')->unsigned()->nullable();
       $table->foreign('partner_id')->references('id')->on('partners')->onUpdate('CASCADE')->onDelete('CASCADE');
       $table->timestamps();
     });
