@@ -1,0 +1,1 @@
+{"version":3,"file":"js/934.js","mappings":"uIAEe,SAASA,IACtB,OAAO","sources":["webpack:///./resources/js/Pages/Auth/ResetPassword.jsx"],"sourcesContent":["import React from 'react';\n\nexport default function ResetPassword() {\n  return <div>Reset</div>;\n}\n"],"names":["ResetPassword"],"sourceRoot":""}
