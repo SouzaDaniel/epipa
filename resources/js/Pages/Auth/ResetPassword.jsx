@@ -6,9 +6,9 @@ import Input from '../../Components/Input';
 
 import imageHelper from '../../helpers/image';
 
-export default function ResetPassword({ appEnvironment, token, email }) {
+export default function ResetPassword({ appEnvironment, token }) {
   const { data, setData, post, processing, errors } = useForm({
-    email,
+    email: '',
     password: '',
     password_confirmation: '',
     token,
@@ -50,7 +50,6 @@ export default function ResetPassword({ appEnvironment, token, email }) {
                           id="email"
                           placeholder="Email"
                           label="Email solicitante"
-                          disabled
                           value={data.email}
                           onChange={({ target: { value } }) =>
                             setData('email', value)
@@ -116,5 +115,4 @@ export default function ResetPassword({ appEnvironment, token, email }) {
 ResetPassword.propTypes = {
   appEnvironment: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
 };

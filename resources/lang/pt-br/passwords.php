@@ -16,7 +16,7 @@ return [
   'reset' => 'Senha alterada com sucesso!',
   'sent' => 'Nós enviamos o email com um link para recuperação de senha!',
   'throttled' => 'Por favor, aguarde antes de tentar novamente.',
-  'token' => 'This password reset token is invalid.',
+  'token' => 'O token solicitado não corresponde com os dados informados.',
   'user' => "Não foi possível encontrar um usuário com esse email.",
 
 ];

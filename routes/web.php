@@ -37,9 +37,7 @@ Route::middleware('guest')->group(function () {
   Route::get('/register-partner', [PartnerController::class, 'create'])->name('register.partner');
   Route::post('/register-partner', [PartnerController::class, 'store']);
   Route::get('/reset-password/{token}', function ($token) {
-    $email = $_GET['email'];
-
-    return Inertia::render('Auth/ResetPassword', ['token' => $token, 'email' => $email]);
+    return Inertia::render('Auth/ResetPassword', ['token' => $token]);
   })->name('password.reset');
 });
 
