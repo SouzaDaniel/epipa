@@ -13,7 +13,7 @@ return [
     |
     */
 
-  'reset' => 'Your password has been reset!',
+  'reset' => 'Senha alterada com sucesso!',
   'sent' => 'Nós enviamos o email com um link para recuperação de senha!',
   'throttled' => 'Por favor, aguarde antes de tentar novamente.',
   'token' => 'This password reset token is invalid.',

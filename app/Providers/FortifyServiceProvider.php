@@ -13,8 +13,8 @@ use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
-use Laravel\Fortify\Contracts\RegisterResponse;
-use Laravel\Fortify\Contracts\RequestPasswordResetLinkViewResponse;
+use Laravel\Fortify\Contracts\PasswordResetResponse;
+use Laravel\Fortify\Contracts\ResetPasswordViewResponse;
 use Laravel\Fortify\Fortify;
 
 class FortifyServiceProvider extends ServiceProvider
@@ -40,6 +40,13 @@ class FortifyServiceProvider extends ServiceProvider
         return redirect()->route('home');
       }
     });
+    $this->app->instance(PasswordResetResponse::class, new class implements PasswordResetResponse
+    {
+      public function toResponse($request)
+      {
+        return redirect()->route('login');
+      }
+    });
   }
 
   /**
@@ -62,9 +69,6 @@ class FortifyServiceProvider extends ServiceProvider
     });
     Fortify::registerView(function () {
       return Inertia::render('Auth/Register');
-    });
-    Fortify::resetPasswordView(function () {
-      return Inertia::render('Auth/ResetPassword');
     });
 
     RateLimiter::for('login', function (Request $request) {

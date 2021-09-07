@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { InertiaLink, useForm, Head } from '@inertiajs/inertia-react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 
 import Input from '../../Components/Input';
 
 import imageHelper from '../../helpers/image';
 
-export default function Login({ appEnvironment }) {
+export default function Login({ appEnvironment, status }) {
   const { data, setData, post, processing, errors } = useForm({
     email: '',
     password: '',
@@ -17,6 +18,10 @@ export default function Login({ appEnvironment }) {
     e.preventDefault();
     post(route('login'));
   };
+
+  useEffect(() => {
+    (() => status && toast.success(status))();
+  }, []);
 
   return (
     <>
@@ -112,4 +117,5 @@ export default function Login({ appEnvironment }) {
 
 Login.propTypes = {
   appEnvironment: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
 };

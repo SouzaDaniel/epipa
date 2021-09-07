@@ -28,6 +28,6 @@ class CreatePartner extends Mailable
    */
   public function build()
   {
-    return $this->view('mail.create-partner');
+    return $this->subject('Novo parceiro!')->view('mail.create-partner');
   }
 }
