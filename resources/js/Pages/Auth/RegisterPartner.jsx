@@ -2,13 +2,12 @@ import React from 'react';
 import { InertiaLink, useForm, Head } from '@inertiajs/inertia-react';
 import PropTypes from 'prop-types';
 
-import logo from '../../../image/logo.svg';
-import register from '../../../image/register.svg';
-
 import Input from '../../Components/Input';
 import DataList from '../../Components/DataList';
 
-export default function RegisterPartner({ users }) {
+import imageHelper from '../../helpers/image';
+
+export default function RegisterPartner({ users, appEnvironment }) {
   const {
     data: partnerData,
     setData: partnerSetData,
@@ -39,7 +38,11 @@ export default function RegisterPartner({ users }) {
               <div className="row">
                 <div className="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-7 mx-auto">
                   <div className="d-flex flex-column text-center">
-                    <img src={logo} alt="" className="img-fluid w-100 mb-5" />
+                    <img
+                      src={imageHelper({ appEnvironment, path: 'logo.svg' })}
+                      alt=""
+                      className="img-fluid w-100 mb-5"
+                    />
                     <h2 className="text-awe-black-first fw-semibold fz-20 mb-awe-20">
                       Feito!
                     </h2>
@@ -68,7 +71,10 @@ export default function RegisterPartner({ users }) {
                         className="d-flex flex-column align-items-start"
                       >
                         <img
-                          src={logo}
+                          src={imageHelper({
+                            appEnvironment,
+                            path: 'logo.svg',
+                          })}
                           alt=""
                           className="mb-4 w-100 img-fluid"
                         />
@@ -200,7 +206,14 @@ export default function RegisterPartner({ users }) {
                     </div>
                     <div className="col-5 d-lg-block d-none mx-auto">
                       <div className="h-100 d-flex align-items-center">
-                        <img src={register} alt="" className="img-fluid" />
+                        <img
+                          src={imageHelper({
+                            appEnvironment,
+                            path: 'register.svg',
+                          })}
+                          alt=""
+                          className="img-fluid"
+                        />
                       </div>
                     </div>
                   </div>
@@ -221,4 +234,5 @@ RegisterPartner.propTypes = {
       name: PropTypes.string,
     })
   ).isRequired,
+  appEnvironment: PropTypes.string.isRequired,
 };

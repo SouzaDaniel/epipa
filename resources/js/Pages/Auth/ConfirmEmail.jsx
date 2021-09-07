@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { useForm, Head } from '@inertiajs/inertia-react';
+import PropTypes from 'prop-types';
 
-import logo from '../../../image/logo.svg';
-import emailSend from '../../../image/email-send.svg';
+import imageHelper from '../../helpers/image';
 
-export default function ConfirmPassword() {
+export default function ConfirmPassword({ appEnvironment }) {
   const { post, processing, wasSuccessful } = useForm({});
 
   const handleResendEmailVerification = () => {
@@ -22,9 +22,16 @@ export default function ConfirmPassword() {
             <div className="row">
               <div className="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-7 mx-auto">
                 <div className="d-flex flex-column text-center">
-                  <img src={logo} alt="" className="img-fluid w-100" />
                   <img
-                    src={emailSend}
+                    src={imageHelper({ appEnvironment, path: 'logo.svg' })}
+                    alt=""
+                    className="img-fluid w-100"
+                  />
+                  <img
+                    src={imageHelper({
+                      appEnvironment,
+                      path: 'email-send.svg',
+                    })}
                     alt=""
                     className="mx-auto img-fluid mt-awe-80 mb-5"
                   />
@@ -56,3 +63,7 @@ export default function ConfirmPassword() {
     </>
   );
 }
+
+ConfirmPassword.propTypes = {
+  appEnvironment: PropTypes.string.isRequired,
+};

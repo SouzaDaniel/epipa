@@ -1,13 +1,12 @@
 import React from 'react';
 import { useForm, InertiaLink, Head } from '@inertiajs/inertia-react';
-
-import logo from '../../../image/logo.svg';
-import userForgotPassword from '../../../image/user-forgot-password.svg';
-import emailSend from '../../../image/email-send.svg';
+import PropTypes from 'prop-types';
 
 import Input from '../../Components/Input';
 
-export default function ForgotPassword() {
+import imageHelper from '../../helpers/image';
+
+export default function ForgotPassword({ appEnvironment }) {
   const { data, setData, post, processing, errors } = useForm({
     email: '',
   });
@@ -27,9 +26,16 @@ export default function ForgotPassword() {
               <div className="row">
                 <div className="col-xxl-4 col-xl-4 col-lg-5 col-md-6 col-sm-7 mx-auto">
                   <div className="d-flex flex-column text-center">
-                    <img src={logo} alt="" className="img-fluid w-100" />
                     <img
-                      src={emailSend}
+                      src={imageHelper({ appEnvironment, path: 'logo.svg' })}
+                      alt=""
+                      className="img-fluid w-100"
+                    />
+                    <img
+                      src={imageHelper({
+                        appEnvironment,
+                        path: 'email-send.svg',
+                      })}
                       alt=""
                       className="mx-auto img-fluid mt-awe-80 mb-5"
                     />
@@ -61,7 +67,10 @@ export default function ForgotPassword() {
                         className="d-flex flex-column align-items-start"
                       >
                         <img
-                          src={logo}
+                          src={imageHelper({
+                            appEnvironment,
+                            path: 'logo.svg',
+                          })}
                           alt=""
                           className="mb-4 w-100 img-fluid"
                         />
@@ -100,7 +109,10 @@ export default function ForgotPassword() {
                     <div className="col-5 d-lg-block d-none mx-auto">
                       <div className="h-100 d-flex align-items-center">
                         <img
-                          src={userForgotPassword}
+                          src={imageHelper({
+                            appEnvironment,
+                            path: 'user-forgot-password.svg',
+                          })}
                           alt=""
                           className="img-fluid"
                         />
@@ -116,3 +128,7 @@ export default function ForgotPassword() {
     </>
   );
 }
+
+ForgotPassword.propTypes = {
+  appEnvironment: PropTypes.string.isRequired,
+};

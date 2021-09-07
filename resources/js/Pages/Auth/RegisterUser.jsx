@@ -1,12 +1,12 @@
 import React from 'react';
 import { InertiaLink, useForm, Head } from '@inertiajs/inertia-react';
-
-import logo from '../../../image/logo.svg';
-import register from '../../../image/register.svg';
+import PropTypes from 'prop-types';
 
 import Input from '../../Components/Input';
 
-export default function RegisterUser() {
+import imageHelper from '../../helpers/image';
+
+export default function RegisterUser({ appEnvironment }) {
   const {
     data: userData,
     setData: userSetData,
@@ -40,7 +40,11 @@ export default function RegisterUser() {
                       onSubmit={userHandleSubmit}
                       className="d-flex flex-column align-items-start"
                     >
-                      <img src={logo} alt="" className="mb-4 w-100 img-fluid" />
+                      <img
+                        src={imageHelper({ appEnvironment, path: 'logo.svg' })}
+                        alt=""
+                        className="mb-4 w-100 img-fluid"
+                      />
                       <h1 className="fz-24 mb-3">Cadastro de hóspede</h1>
                       <p className="fz-14 text-awe-gray-first mb-4">
                         Preencha seus dados abaixo e comece a desfrutar as
@@ -119,7 +123,14 @@ export default function RegisterUser() {
                   </div>
                   <div className="col-5 d-lg-block d-none mx-auto">
                     <div className="h-100 d-flex align-items-center">
-                      <img src={register} alt="" className="img-fluid" />
+                      <img
+                        src={imageHelper({
+                          appEnvironment,
+                          path: 'register.svg',
+                        })}
+                        alt=""
+                        className="img-fluid"
+                      />
                     </div>
                   </div>
                 </div>
@@ -131,3 +142,7 @@ export default function RegisterUser() {
     </>
   );
 }
+
+RegisterUser.propTypes = {
+  appEnvironment: PropTypes.string.isRequired,
+};

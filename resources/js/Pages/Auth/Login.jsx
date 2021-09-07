@@ -1,12 +1,12 @@
 import React from 'react';
 import { InertiaLink, useForm, Head } from '@inertiajs/inertia-react';
-
-import logo from '../../../image/logo.svg';
-import userSecure from '../../../image/user-secure.svg';
+import PropTypes from 'prop-types';
 
 import Input from '../../Components/Input';
 
-const Login = () => {
+import imageHelper from '../../helpers/image';
+
+export default function Login({ appEnvironment }) {
   const { data, setData, post, processing, errors } = useForm({
     email: '',
     password: '',
@@ -33,7 +33,7 @@ const Login = () => {
                       className="d-flex flex-column align-items-start"
                     >
                       <img
-                        src="/public/images/logo.svg"
+                        src={imageHelper({ appEnvironment, path: 'logo.svg' })}
                         alt=""
                         className="mb-5 w-100 img-fluid"
                       />
@@ -75,7 +75,7 @@ const Login = () => {
                         className="btn btn-awe-blue-first w-100 mt-awe-20 mb-3"
                         disabled={processing}
                       >
-                        FAZER LOGIN
+                        {processing ? 'REALIZANDO LOGIN' : 'FAZER LOGIN'}
                       </button>
                       <span className="fz-14 text-awe-gray-first">
                         Ainda não está cadastrado?{' '}
@@ -90,7 +90,14 @@ const Login = () => {
                   </div>
                   <div className="col-5 d-lg-block d-none mx-auto">
                     <div className="h-100 d-flex align-items-center">
-                      <img src={userSecure} alt="" className="img-fluid" />
+                      <img
+                        src={imageHelper({
+                          appEnvironment,
+                          path: 'user-secure.svg',
+                        })}
+                        alt=""
+                        className="img-fluid w-100"
+                      />
                     </div>
                   </div>
                 </div>
@@ -101,6 +108,8 @@ const Login = () => {
       </main>
     </>
   );
-};
+}
 
-export default Login;
+Login.propTypes = {
+  appEnvironment: PropTypes.string.isRequired,
+};
