@@ -3,6 +3,7 @@
 import React from 'react';
 import { useForm, Head } from '@inertiajs/inertia-react';
 import PropTypes from 'prop-types';
+import { Inertia } from '@inertiajs/inertia';
 
 import imageHelper from '../../helpers/image';
 
@@ -13,10 +14,24 @@ export default function ConfirmPassword({ appEnvironment }) {
     post(route('verification.send'));
   };
 
+  const handleLogout = (e) => {
+    e.preventDefault();
+    Inertia.post(route('logout'));
+  };
+
   return (
     <>
       <Head title="Verifição de email" />
-      <main>
+      <main className="position-relative">
+        <section className="position-absolute top-24 end-24">
+          <button
+            type="submit"
+            className="btn btn-awe-blue-first"
+            onClick={handleLogout}
+          >
+            SAIR
+          </button>
+        </section>
         <section className="min-vh-100 d-flex align-items-center">
           <div className="container-fluid py-4">
             <div className="row">

@@ -15,7 +15,7 @@ export default function Input({ label, id, error, success, ...attr }) {
 Input.propTypes = {
   label: PropTypes.string,
   id: PropTypes.string.isRequired,
-  error: PropTypes.string,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   success: PropTypes.string,
 };
 Input.defaultProps = {

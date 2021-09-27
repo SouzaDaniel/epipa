@@ -6,6 +6,7 @@ const Dashboard = ({ user }) => {
     e.preventDefault();
     Inertia.post(route('logout'));
   };
+
   return (
     <div>
       Welcome {user.name},<button onClick={handleLogout}>Log Out</button>
